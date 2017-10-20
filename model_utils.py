@@ -20,7 +20,7 @@ def y_pred_min(yt, yp):
 def y_pred_max(yt, yp):
     return K.max(yp)
 
-def generate_model(lr=1e-3, img_size=128):
+def generate_mobilenet_model(lr=1e-3, img_size=128):
     '''
     Creates a Colorizer model. Note the difference from the report
     - https://github.com/baldassarreFe/deep-koalarization/blob/master/report.pdf
@@ -73,7 +73,7 @@ def generate_model(lr=1e-3, img_size=128):
 
 
 if __name__ == '__main__':
-    model = generate_model()
+    model = generate_mobilenet_model()
     model.summary()
 
     from keras.utils.vis_utils import plot_model

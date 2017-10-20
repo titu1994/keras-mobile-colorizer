@@ -3,14 +3,14 @@ import numpy as np
 
 from keras.preprocessing.image import img_to_array, load_img
 from data_utils import prepare_input_image_batch, postprocess_output, resize
-from model_utils import generate_model
+from model_utils import generate_mobilenet_model
 
 
 IMAGE_FOLDER_PATH = r"D:\Yue\Documents\Datasets\MSCOCO\val\valset\\"
 batch_size = 10
 image_size = 256
 
-model = generate_model(img_size=image_size)
+model = generate_mobilenet_model(img_size=image_size)
 model.load_weights('weights/model.h5')
 
 X = []
