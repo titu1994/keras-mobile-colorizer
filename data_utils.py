@@ -7,7 +7,7 @@ from skimage.transform import resize
 from skimage.io import imsave, imread
 
 import tensorflow as tf
-from tensorflow.contrib import data as tfdata
+from tensorflow import data as tfdata
 sess = tf.Session()
 
 from keras import backend as K
