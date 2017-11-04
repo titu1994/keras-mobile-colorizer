@@ -11,7 +11,7 @@ batch_size = 10
 image_size = 256
 
 model = generate_mobilenet_model(img_size=image_size)
-model.load_weights('weights/model.h5')
+model.load_weights('weights/mobilenet_model.h5')
 
 X = []
 files = os.listdir(IMAGE_FOLDER_PATH)
