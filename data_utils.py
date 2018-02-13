@@ -188,7 +188,7 @@ def _construct_dataset(record_path, batch_size, sess):
         return l, ab, embed
 
     dataset = tfdata.TFRecordDataset([record_path], 'ZLIB')  # create a Dataset to wrap the TFRecord
-    dataset = dataset.map(parse_record, num_threads=2, output_buffer_size=2 * batch_size)  # parse the record
+    dataset = dataset.map(parse_record, num_parallel_calls=2)  # parse the record
     dataset = dataset.repeat()  # repeat forever
     dataset = dataset.batch(batch_size)  # batch into the required batchsize
     dataset = dataset.shuffle(buffer_size=5)  # shuffle the batches
